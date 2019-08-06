@@ -2,8 +2,8 @@ version: '3'
 services:
   jenkins_master:
     build:
-      context: .
-      dockerfile: jenkins.Dockerfile
+      context: ./master
+      dockerfile: master.Dockerfile
     ports:
       - "8080:8080"
       - "50000:50000"
@@ -13,8 +13,8 @@ services:
       - jenkins_agent
   jenkins_agent:
     build:
-      context: .
-      dockerfile: agent.Dockerfile
+      context: ./slave
+      dockerfile: slave.Dockerfile
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
