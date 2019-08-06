@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm ~/log || true
+
 # Apply configurations when ready
 /usr/local/bin/configure-master.sh | sed "s/^/[MASTER_CONFIGURATION]: /" & 
 # Run Jenkins
